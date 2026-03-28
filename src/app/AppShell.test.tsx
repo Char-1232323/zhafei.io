@@ -26,7 +26,7 @@ describe('AppShell bright redesign', () => {
     expect(heroRegion).toHaveTextContent(siteContent.profile.name)
     expect(heroRegion).toHaveTextContent(siteContent.profile.emotionalTagline)
     expect(screen.getByText(siteContent.mood.intro)).toBeInTheDocument()
-    expect(screen.getByText('Projects placeholder')).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: 'Featured Projects' })).toBeInTheDocument()
     expect(screen.getByText('Experience placeholder')).toBeInTheDocument()
     expect(screen.getByText('Skills placeholder')).toBeInTheDocument()
     expect(screen.getByText('Contact placeholder')).toBeInTheDocument()
