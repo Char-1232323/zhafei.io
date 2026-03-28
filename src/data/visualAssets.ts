@@ -1,9 +1,6 @@
-import type { ImageAsset } from '../types/content'
+import type { VisualAssets } from '../types/content'
 
-export const visualAssets: {
-  heroImage: ImageAsset
-  accentImage: ImageAsset
-} = {
+export const visualAssets: VisualAssets = {
   heroImage: {
     src: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80',
     alt: 'Soft pink-toned placeholder artwork for the hero section',

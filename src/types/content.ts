@@ -5,6 +5,11 @@ export interface ImageAsset {
   creditUrl?: string
 }
 
+export interface VisualAssets {
+  heroImage: ImageAsset
+  accentImage: ImageAsset
+}
+
 export interface HeroAction {
   label: string
   href: string
