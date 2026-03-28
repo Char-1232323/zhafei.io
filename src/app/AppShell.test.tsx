@@ -6,8 +6,24 @@ describe('AppShell bright redesign', () => {
     render(<AppShell />)
 
     const sections = screen.getAllByRole('region')
-    expect(sections[0]).toHaveAttribute('id', 'hero')
-    expect(sections[1]).toHaveAttribute('id', 'mood')
-    expect(sections[2]).toHaveAttribute('id', 'projects')
+    expect(sections.map((section) => section.id)).toEqual([
+      'hero',
+      'mood',
+      'projects',
+      'experience',
+      'skills',
+      'contact'
+    ])
+  })
+
+  it('renders placeholder labels for each scaffolded section', () => {
+    render(<AppShell />)
+
+    expect(screen.getByText('Hero placeholder')).toBeInTheDocument()
+    expect(screen.getByText('Mood placeholder')).toBeInTheDocument()
+    expect(screen.getByText('Projects placeholder')).toBeInTheDocument()
+    expect(screen.getByText('Experience placeholder')).toBeInTheDocument()
+    expect(screen.getByText('Skills placeholder')).toBeInTheDocument()
+    expect(screen.getByText('Contact placeholder')).toBeInTheDocument()
   })
 })
