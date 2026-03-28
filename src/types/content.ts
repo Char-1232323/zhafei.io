@@ -44,15 +44,17 @@ export interface ContactLink {
   href: string
 }
 
+export interface ProfileContent {
+  name: string
+  role: string
+  targetRole: string
+  intro: string
+  actions: HeroAction[]
+  stats: HeroStat[]
+}
+
 export interface SiteContent {
-  profile: {
-    name: string
-    role: string
-    targetRole: string
-    intro: string
-    actions: HeroAction[]
-    stats: HeroStat[]
-  }
+  profile: ProfileContent
   experience: ExperienceItem[]
   projects: ProjectItem[]
   skills: SkillGroup[]
