@@ -2,9 +2,10 @@ import { render, screen } from '@testing-library/react'
 import AppShell from './AppShell'
 
 describe('AppShell', () => {
-  it('renders the homepage landmark', () => {
+  it('renders the owner name and target role from structured content', () => {
     render(<AppShell />)
 
-    expect(screen.getByRole('main')).toHaveAttribute('id', 'top')
+    expect(screen.getByText('Fey')).toBeInTheDocument()
+    expect(screen.getByText(/seeking frontend or full-stack internship/i)).toBeInTheDocument()
   })
 })
