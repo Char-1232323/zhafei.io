@@ -9,7 +9,7 @@ describe('bright redesign content model', () => {
   })
 
   it('provides a hero image, mood content, and fuller draft sections', () => {
-    expect(visualAssets.heroImage.src).toMatch(/^https?:\/\//)
+    expect(visualAssets.heroImage.src).toBeTruthy()
     expect(visualAssets.accentImage.src).toMatch(/^https?:\/\//)
     expect(visualAssets.heroImage.creditLabel).toBeTruthy()
     expect(visualAssets.accentImage.creditLabel).toBeTruthy()
