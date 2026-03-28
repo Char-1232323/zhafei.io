@@ -1,18 +1,18 @@
 .header {
   position: sticky;
-  top: 16px;
+  top: 14px;
   z-index: 20;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  padding: 14px 18px;
-  margin-bottom: 32px;
-  background: rgba(8, 17, 31, 0.72);
+  padding: 12px 18px;
+  margin-bottom: 20px;
+  background: rgba(255, 252, 252, 0.8);
   border: 1px solid var(--line);
   border-radius: 999px;
-  backdrop-filter: blur(20px);
-  box-shadow: var(--shadow);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 8px 32px rgba(209, 174, 187, 0.15);
 }
 
 .brand,
@@ -39,5 +39,5 @@
 
 .link:hover,
 .link:focus-visible {
-  color: var(--accent);
+  color: var(--accent-strong);
 }
