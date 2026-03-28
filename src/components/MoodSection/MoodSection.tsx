@@ -7,8 +7,9 @@ interface MoodSectionProps {
 
 function MoodSection({ content }: MoodSectionProps) {
   return (
-    <section id="mood" className={styles.section} aria-labelledby="mood-title">
+    <section id="about" className={styles.section} aria-labelledby="about-title">
       <div className={styles.intro}>
+        <p id="about-title" className={styles.kicker}>About Me</p>
         <p>{content.intro}</p>
       </div>
 

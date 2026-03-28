@@ -9,7 +9,7 @@ describe('AppShell bright redesign', () => {
     const sections = screen.getAllByRole('region')
     expect(sections.map((section) => section.id)).toEqual([
       'hero',
-      'mood',
+      'about',
       'projects',
       'experience',
       'skills',
