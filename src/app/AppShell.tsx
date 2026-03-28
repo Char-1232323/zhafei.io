@@ -8,9 +8,12 @@ function AppShell() {
     <div className={styles.page}>
       <main id="top" className={styles.main}>
         <Header brandLabel={siteContent.profile.name} navLinks={navigationLinks} />
-        <p className={styles.kicker}>{siteContent.profile.role}</p>
-        <h1 className={styles.placeholder}>{siteContent.profile.name}</h1>
-        <p className={styles.subtitle}>{siteContent.profile.targetRole}</p>
+        <section id="hero" aria-label="Hero" />
+        <section id="mood" aria-label="Mood" />
+        <section id="projects" aria-label="Projects" />
+        <section id="experience" aria-label="Experience" />
+        <section id="skills" aria-label="Skills" />
+        <section id="contact" aria-label="Contact" />
       </main>
     </div>
   )
