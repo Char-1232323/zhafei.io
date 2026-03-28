@@ -1,22 +1,21 @@
 import styles from './Header.module.css'
 
-const links = [
-  { label: 'Experience', href: '#experience' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Skills', href: '#skills' },
-  { label: 'Education', href: '#education' },
-  { label: 'Contact', href: '#contact' }
-]
+import type { NavigationLink } from '../../config/navigation'
 
-function Header() {
+interface HeaderProps {
+  brandLabel: string
+  navLinks: NavigationLink[]
+}
+
+function Header({ brandLabel, navLinks }: HeaderProps) {
   return (
     <header className={styles.header}>
       <a href="#top" className={styles.brand}>
-        Fey
+        {brandLabel}
       </a>
 
       <nav aria-label="Primary" className={styles.nav}>
-        {links.map((link) => (
+        {navLinks.map((link) => (
           <a key={link.href} href={link.href} className={styles.link}>
             {link.label}
           </a>

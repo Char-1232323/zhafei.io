@@ -7,7 +7,12 @@ describe('AppShell', () => {
     render(<AppShell />)
 
     expect(screen.getByRole('main')).toHaveAttribute('id', 'top')
-    expect(screen.getByText(siteContent.profile.name)).toBeInTheDocument()
+    expect(
+      screen.getByRole('heading', {
+        level: 1,
+        name: siteContent.profile.name
+      })
+    ).toBeInTheDocument()
     expect(screen.getByText(siteContent.profile.targetRole)).toBeInTheDocument()
   })
 })
