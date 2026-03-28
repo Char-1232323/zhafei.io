@@ -1,8 +1,10 @@
 import type { VisualAssets } from '../types/content'
 
+const heroImageUrl = new URL('../assets/hero-illustration.webp', import.meta.url).href
+
 export const visualAssets: VisualAssets = {
   heroImage: {
-    src: '/images/hero-illustration.webp',
+    src: heroImageUrl,
     alt: 'Furina character illustration',
     creditLabel: 'Fan art',
   },
