@@ -1,23 +1,37 @@
 import type { ImageAsset, ProfileContent } from '../../types/content'
 import styles from './HeroPoster.module.css'
 
+export type HeroPosterContent = Pick<
+  ProfileContent,
+  'name' | 'role' | 'targetRole' | 'intro' | 'emotionalTagline' | 'actions' | 'stats'
+>
+
 interface HeroPosterProps {
-  profile: ProfileContent
+  content: HeroPosterContent
   heroImage: ImageAsset
 }
 
-function HeroPoster({ profile, heroImage }: HeroPosterProps) {
+function HeroPoster({ content, heroImage }: HeroPosterProps) {
   return (
     <section id="hero" className={styles.hero} aria-labelledby="hero-title">
       <div className={styles.copy}>
-        <p className={styles.role}>{profile.role}</p>
+        <p className={styles.role}>{content.role}</p>
         <h1 id="hero-title" className={styles.title}>
-          {profile.name}
+          {content.name}
         </h1>
-        <p className={styles.tagline}>{profile.emotionalTagline}</p>
-        <p className={styles.intro}>{profile.intro}</p>
+        <p className={styles.tagline}>{content.emotionalTagline}</p>
+        <p className={styles.targetRole}>{content.targetRole}</p>
+        <p className={styles.intro}>{content.intro}</p>
+        <dl className={styles.stats} aria-label="Hero details">
+          {content.stats.map((stat) => (
+            <div key={stat.label} className={styles.statCard}>
+              <dt className={styles.statLabel}>{stat.label}</dt>
+              <dd className={styles.statValue}>{stat.value}</dd>
+            </div>
+          ))}
+        </dl>
         <div className={styles.actions}>
-          {profile.actions.map((action) => (
+          {content.actions.map((action) => (
             <a key={action.href} href={action.href} className={styles.action}>
               {action.label}
             </a>

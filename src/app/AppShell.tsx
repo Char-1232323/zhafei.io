@@ -10,7 +10,7 @@ function AppShell() {
     <div className={styles.page}>
       <main id="top" className={styles.main}>
         <Header brandLabel={siteContent.profile.name} navLinks={navigationLinks} />
-        <HeroPoster profile={siteContent.profile} heroImage={visualAssets.heroImage} />
+        <HeroPoster content={siteContent.profile} heroImage={visualAssets.heroImage} />
         <section id="mood" aria-label="Mood">
           <p>Mood placeholder</p>
         </section>
