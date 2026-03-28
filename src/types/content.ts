@@ -1,3 +1,10 @@
+export interface ImageAsset {
+  src: string
+  alt: string
+  creditLabel?: string
+  creditUrl?: string
+}
+
 export interface HeroAction {
   label: string
   href: string
@@ -23,6 +30,7 @@ export interface ProjectItem {
   contribution: string
   techStack: string[]
   result: string
+  mood?: string
   codeUrl?: string
   demoUrl?: string
 }
@@ -44,17 +52,30 @@ export interface ContactLink {
   href: string
 }
 
+export interface MoodCard {
+  title: string
+  description: string
+}
+
 export interface ProfileContent {
   name: string
   role: string
   targetRole: string
   intro: string
+  emotionalTagline: string
   actions: HeroAction[]
   stats: HeroStat[]
 }
 
+export interface MoodContent {
+  intro: string
+  cards: MoodCard[]
+  tags: string[]
+}
+
 export interface SiteContent {
   profile: ProfileContent
+  mood: MoodContent
   experience: ExperienceItem[]
   projects: ProjectItem[]
   skills: SkillGroup[]
