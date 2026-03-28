@@ -17,7 +17,7 @@ describe('AppShell bright redesign', () => {
     ])
   })
 
-  it('renders the real hero section and keeps placeholders for unfinished regions', () => {
+  it('renders all sections with real content', () => {
     render(<AppShell />)
 
     const heroRegion = screen.getByRole('region', { name: siteContent.profile.name })
@@ -27,8 +27,8 @@ describe('AppShell bright redesign', () => {
     expect(heroRegion).toHaveTextContent(siteContent.profile.emotionalTagline)
     expect(screen.getByText(siteContent.mood.intro)).toBeInTheDocument()
     expect(screen.getByRole('heading', { name: 'Featured Projects' })).toBeInTheDocument()
-    expect(screen.getByText('Experience placeholder')).toBeInTheDocument()
-    expect(screen.getByText('Skills placeholder')).toBeInTheDocument()
-    expect(screen.getByText('Contact placeholder')).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: 'Experience' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: 'Skills & Interests' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: "Let's Connect" })).toBeInTheDocument()
   })
 })

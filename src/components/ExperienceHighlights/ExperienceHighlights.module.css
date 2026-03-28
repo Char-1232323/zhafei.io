@@ -1,0 +1,127 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  padding: 32px 0 48px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.title {
+  margin: 0;
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 26px;
+  border-radius: 24px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.78), rgba(255, 245, 247, 0.62));
+  border: 1px solid var(--line);
+  box-shadow: 0 16px 40px rgba(209, 174, 187, 0.14);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 48px rgba(209, 174, 187, 0.2);
+}
+
+.cardHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: flex-start;
+}
+
+.roleInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.role {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--accent-strong);
+  letter-spacing: -0.01em;
+}
+
+.organization {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.period {
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: rgba(255, 182, 193, 0.25);
+  border: 1px solid rgba(255, 182, 193, 0.4);
+  color: var(--accent-strong);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.summary {
+  margin: 0;
+  color: var(--text);
+  font-size: 0.95rem;
+  line-height: 1.75;
+}
+
+.outcomes {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+  padding-left: 20px;
+}
+
+.outcome {
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 8px;
+}
+
+.techPill {
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
