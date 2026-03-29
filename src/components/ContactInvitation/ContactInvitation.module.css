@@ -60,3 +60,16 @@
   box-shadow: 0 8px 24px rgba(209, 174, 187, 0.25);
   background: rgba(255, 182, 193, 0.45);
 }
+
+.link:focus-visible {
+  outline: 2px solid var(--accent-strong);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(209, 174, 187, 0.2);
+}
+
+.fallbackHint {
+  min-height: 1.25rem;
+  margin: 2px 0 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
