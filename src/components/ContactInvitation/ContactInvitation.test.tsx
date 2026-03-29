@@ -29,5 +29,6 @@ describe('ContactInvitation', () => {
 
     const emailLink = screen.getByText('Email')
     expect(emailLink).not.toHaveAttribute('target')
+    expect(emailLink).toHaveAttribute('href', expect.stringMatching(/^mailto:/))
   })
 })

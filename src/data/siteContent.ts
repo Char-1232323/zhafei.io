@@ -116,7 +116,7 @@ export const siteContent: SiteContent = {
     }
   ],
   contact: [
-    { label: 'Email', href: 'zf210033@mail.ustc,edu.cn' },
+    { label: 'Email', href: 'mailto:zf210033@mail.ustc.edu.cn' },
     { label: 'GitHub', href: 'https://github.com/Char-1232323' },
     { label: 'Pages', href: 'https://char-1232323.github.io/zhafei.io/' }
   ]
