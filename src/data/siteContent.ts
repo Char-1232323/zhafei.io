@@ -46,7 +46,7 @@ export const siteContent: SiteContent = {
   experience: [
     {
       role: 'MS.Student',
-      organization: 'the Univeristy of Science and Technology',
+      organization: 'Math Department, the Univeristy of Science and Technology',
       period: '2025.9 - present',
       technologies: ['AI', '3D vision', 'Diffusion'],
       summary:
@@ -58,7 +58,7 @@ export const siteContent: SiteContent = {
     },
     {
       role: 'Student',
-      organization: 'the University of Science and Technology, Math Department',
+      organization: 'Math Department, the University of Science and Technology',
       period: '2021.9 - 2025.6',
       technologies: ['Computational Mathmatics', 'Optimaization', 'Computer Graphics'],
       summary:
@@ -70,7 +70,7 @@ export const siteContent: SiteContent = {
     },
     {
       role: 'Student',
-      organization: 'HuaiNing high school,Anhui Province',
+      organization: 'Huaining middle school,Anhui Province',
       period: '2018.9 - 2021.6',
       technologies: ['Physics', 'Math', 'English'],
       summary:
@@ -116,7 +116,7 @@ export const siteContent: SiteContent = {
     }
   ],
   contact: [
-    { label: 'Email', href: 'mailto:fey@example.com' },
+    { label: 'Email', href: 'zf210033@mail.ustc,edu.cn' },
     { label: 'GitHub', href: 'https://github.com/Char-1232323' },
     { label: 'Pages', href: 'https://char-1232323.github.io/zhafei.io/' }
   ]
