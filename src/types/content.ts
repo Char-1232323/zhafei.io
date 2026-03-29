@@ -57,6 +57,15 @@ export interface ContactLink {
   href: string
 }
 
+export interface PublicationItem {
+  title: string
+  venue: string
+  year: string
+  link: string
+  authors: string[]
+  abstract: string
+}
+
 export interface MoodCard {
   title: string
   description: string
@@ -83,7 +92,8 @@ export interface SiteContent {
   mood: MoodContent
   experience: ExperienceItem[]
   projects: ProjectItem[]
-  skills: SkillGroup[]
-  education: EducationItem[]
+  publications: PublicationItem[]
+  skills?: SkillGroup[]
+  education?: EducationItem[]
   contact: ContactLink[]
 }

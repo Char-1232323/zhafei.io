@@ -6,8 +6,8 @@ import Header from '../components/Header/Header'
 import HeroPoster from '../components/HeroPoster/HeroPoster'
 import MoodSection from '../components/MoodSection/MoodSection'
 import FeaturedProjects from '../components/FeaturedProjects/FeaturedProjects'
+import PublicationsSection from '../components/PublicationsSection/PublicationsSection'
 import ExperienceHighlights from '../components/ExperienceHighlights/ExperienceHighlights'
-import SkillsPanel from '../components/SkillsPanel/SkillsPanel'
 import ContactInvitation from '../components/ContactInvitation/ContactInvitation'
 
 function AppShell() {
@@ -17,9 +17,9 @@ function AppShell() {
         <Header brandLabel={siteContent.profile.name} navLinks={navigationLinks} />
         <HeroPoster content={siteContent.profile} heroImage={visualAssets.heroImage} />
         <MoodSection content={siteContent.mood} />
-<FeaturedProjects projects={siteContent.projects} />
+        <FeaturedProjects projects={siteContent.projects} />
+        <PublicationsSection publications={siteContent.publications} />
         <ExperienceHighlights experiences={siteContent.experience} />
-        <SkillsPanel skills={siteContent.skills} />
         <ContactInvitation contactLinks={siteContent.contact} />
       </main>
     </div>

@@ -3,27 +3,27 @@ import type { SiteContent } from '../types/content'
 export const siteContent: SiteContent = {
   profile: {
     name: 'Fey',
-    role: 'Dreamy Builder / Student',
-    targetRole: 'Open to creative frontend, product, and interaction-focused opportunities',
+    role: 'Student',
+    targetRole: 'Open to creative frontier AI development',
     intro:
-      'I like building interfaces that feel soft, thoughtful, and quietly memorable, especially when design and code can support the same mood.',
+      'I am a MS. student in USTC who loves Math, AI techniques and ACG culture',
     emotionalTagline:
       'A small corner of the internet for ideas, visuals, and projects I want to keep close.',
     actions: [
-      { label: 'See My World', href: '#mood' },
+      { label: 'See My World', href: '#about' },
       { label: 'Featured Projects', href: '#projects' },
       { label: 'Say Hello', href: '#contact' }
     ],
     stats: [
       { label: 'Mood', value: 'Soft, bright, and curious' },
-      { label: 'Focus', value: 'Frontend + visual storytelling' },
-      { label: 'Now', value: 'Learning, prototyping, refining' },
+      { label: 'Focus', value: 'CV, AI' },
+      { label: 'Now', value: 'Learning at school' },
       { label: 'Style', value: 'Dreamy but practical' }
     ]
   },
   mood: {
     intro:
-      'I enjoy products that feel gentle on the surface but precise underneath. I care about atmosphere, clarity, and the tiny details that make a page feel alive.',
+      'I am a first-year M.S. student at the University of Science and Technology of China, advised by Prof. Juyong Zhang. My current research focuses on 3D vision and diffusion generation. I received my B.S. in Computational Mathematics from the Graphics & Geometric Computing Lab at the University of Science and Technology of China (USTC).',
     cards: [
       {
         title: 'What I enjoy building',
@@ -45,10 +45,22 @@ export const siteContent: SiteContent = {
   },
   experience: [
     {
-      role: 'Frontend Intern',
-      organization: 'Product Studio Team',
-      period: '2025.06 - 2025.08',
-      technologies: ['React', 'TypeScript', 'Vite'],
+      role: 'MS.Student',
+      organization: 'the Univeristy of Science and Technology',
+      period: '2025.9 - present',
+      technologies: ['AI', '3D vision', 'Diffusion'],
+      summary:
+        'Used personal projects to explore layout, frontend polish, and the balance between visual atmosphere and practical usability.',
+      outcomes: [
+        'Built small experiments that mix personal aesthetics with real interface structure.',
+        'Developed a stronger sense for turning abstract visual ideas into working pages.'
+      ]
+    },
+    {
+      role: 'Student',
+      organization: 'the University of Science and Technology, Math Department',
+      period: '2021.9 - 2025.6',
+      technologies: ['Computational Mathmatics', 'Optimaization', 'Computer Graphics'],
       summary:
         'Worked on internal interfaces and UI refinements, focusing on consistency and a smoother day-to-day product experience.',
       outcomes: [
@@ -57,15 +69,13 @@ export const siteContent: SiteContent = {
       ]
     },
     {
-      role: 'Independent Maker',
-      organization: 'Personal Projects',
-      period: '2024 - present',
-      technologies: ['React', 'Figma', 'CSS', 'Python'],
+      role: 'Student',
+      organization: 'HuaiNing high school,Anhui Province',
+      period: '2018.9 - 2021.6',
+      technologies: ['Physics', 'Math', 'English'],
       summary:
-        'Used personal projects to explore layout, frontend polish, and the balance between visual atmosphere and practical usability.',
+        '',
       outcomes: [
-        'Built small experiments that mix personal aesthetics with real interface structure.',
-        'Developed a stronger sense for turning abstract visual ideas into working pages.'
       ]
     }
   ],
@@ -100,26 +110,24 @@ export const siteContent: SiteContent = {
       mood: 'quiet utility'
     }
   ],
-  skills: [
+  publications: [
     {
-      title: 'Design and Frontend',
-      items: ['React', 'TypeScript', 'Responsive UI', 'CSS composition', 'Interaction polish']
+      title: 'Mixture-of-Experts Operator Transformer for Large-Scale PDE Pre-Training',
+      venue: 'NeurIPS 2025 Poster (MoE-POT)',
+      year: '2025',
+      link: 'https://neurips.cc/virtual/2025/loc/san-diego/poster/118221',
+      authors: ['Hong Wang', 'Haiyang Xin', 'Jie Wang', 'Xuanze Yang', 'Fei Zha', 'huanshuo dong', 'Yan Jiang'],
+      abstract:
+        'Pre-training has proven effective for PDE neural operators, but heterogeneous datasets and dense model scaling remain challenging. MoE-POT introduces a sparse-activated Mixture-of-Experts operator transformer with a layer-wise router that selects 4 routed experts from 16 plus 2 shared experts. Pre-trained from 30M to 0.5B parameters on six public PDE datasets, the 90M activated-parameter model reports up to 40% lower zero-shot error than existing 120M activated-parameter baselines.'
     },
     {
-      title: 'Tools I Reach For',
-      items: ['Vite', 'Git', 'Figma', 'JavaScript', 'Python']
-    },
-    {
-      title: 'Things I Care About',
-      items: ['Visual hierarchy', 'Readable structure', 'Gentle motion', 'Personal expression', 'Maintainable code']
-    }
-  ],
-  education: [
-    {
-      school: 'Example University',
-      program: 'B.S. in Computer Science',
-      period: '2022 - 2026',
-      highlights: ['Exploring human-computer interaction, software engineering, and interface design.']
+      title: 'Easy3E: Feed-Forward 3D Asset Editing via Rectified Voxel Flow',
+      venue: 'arXiv / CVPR 2026 (Easy3E)',
+      year: '2026',
+      link: 'https://arxiv.org/abs/2602.21499',
+      authors: ['Shimin Hu', 'Yuanyi Wei', 'Fei Zha', 'Yudong Guo', 'Juyong Zhang'],
+      abstract:
+        'Easy3E proposes a feed-forward 3D editing framework built on TRELLIS that edits 3D models from a single editing view. It introduces Voxel FlowEdit in sparse voxel latent space for globally consistent 3D deformation and a normal-guided single-to-multi-view module to restore high-frequency appearance details. Experiments show fast, globally consistent, and high-fidelity 3D model editing.'
     }
   ],
   contact: [

@@ -11,8 +11,8 @@ describe('AppShell bright redesign', () => {
       'hero',
       'about',
       'projects',
+      'publications',
       'experience',
-      'skills',
       'contact'
     ])
   })
@@ -27,8 +27,8 @@ describe('AppShell bright redesign', () => {
     expect(heroRegion).toHaveTextContent(siteContent.profile.emotionalTagline)
     expect(screen.getByText(siteContent.mood.intro)).toBeInTheDocument()
     expect(screen.getByRole('heading', { name: 'Featured Projects' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: 'Publications' })).toBeInTheDocument()
     expect(screen.getByRole('heading', { name: 'Experience' })).toBeInTheDocument()
-    expect(screen.getByRole('heading', { name: 'Skills & Interests' })).toBeInTheDocument()
     expect(screen.getByRole('heading', { name: "Let's Connect" })).toBeInTheDocument()
   })
 })
