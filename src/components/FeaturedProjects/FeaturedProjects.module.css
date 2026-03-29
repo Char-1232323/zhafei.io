@@ -28,8 +28,14 @@
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(320px, 420px);
   gap: 20px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(209, 174, 187, 0.7) transparent;
 }
 
 .card {
@@ -41,6 +47,8 @@
   background: linear-gradient(145deg, rgba(255, 255, 255, 0.78), rgba(255, 245, 247, 0.62));
   border: 1px solid var(--line);
   box-shadow: 0 16px 40px rgba(209, 174, 187, 0.14);
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -64,6 +72,18 @@
   letter-spacing: -0.01em;
 }
 
+.projectLink {
+  color: inherit;
+  text-decoration: none;
+}
+
+.projectLink:hover,
+.projectLink:focus-visible {
+  text-decoration: underline;
+  text-decoration-color: rgba(201, 110, 143, 0.65);
+  text-underline-offset: 3px;
+}
+
 .moodLabel {
   display: inline-block;
   padding: 4px 12px;
@@ -81,6 +101,16 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+
+.projectImage {
+  width: 100%;
+  height: 160px;
+  object-fit: contain;
+  border-radius: 16px;
+  border: 1px solid rgba(209, 174, 187, 0.45);
+  background: rgba(255, 255, 255, 0.7);
+  padding: 10px;
 }
 
 .purpose,
@@ -123,6 +153,6 @@
 
 @media (max-width: 900px) {
   .cards {
-    grid-template-columns: 1fr;
+    grid-auto-columns: minmax(260px, 86vw);
   }
 }

@@ -81,33 +81,18 @@ export const siteContent: SiteContent = {
   ],
   projects: [
     {
-      name: 'Dream Poster Homepage',
+      name: 'MoEPOT',
       purpose:
-        'A personal homepage that feels more like a mood board and a self-introduction than a plain resume page.',
+        'A Mixture-of-Experts operator transformer for large-scale PDE pre-training and better cross-domain generalization.',
       contribution:
-        'Shaped the page structure, visual tone, and component system to support a softer and brighter identity.',
-      techStack: ['React', 'TypeScript', 'CSS Modules'],
+        'Contributed to research, experimentation, and evaluation around sparse expert routing and operator modeling.',
+      techStack: ['PyTorch', 'Transformer', 'Mixture-of-Experts', 'Neural Operators'],
       result:
-        'Created a homepage concept that can hold personality, projects, and contact information at the same time.',
-      mood: 'soft editorial'
-    },
-    {
-      name: 'Interface Notes Lab',
-      purpose: 'A small collection of interface studies exploring color, motion, and card composition.',
-      contribution:
-        'Designed and implemented the interaction patterns, testing how tiny visual changes shift the feeling of a page.',
-      techStack: ['HTML', 'CSS', 'JavaScript'],
-      result: 'Turned visual experiments into reusable patterns for future frontend work.',
-      mood: 'playful studies'
-    },
-    {
-      name: 'Creative Toolkit Experiments',
-      purpose: 'A set of small prototypes for writing, visual organization, and idea capture.',
-      contribution:
-        'Built lightweight interfaces and explored how minimal tools can still feel emotionally warm.',
-      techStack: ['React', 'Vite', 'Local data'],
-      result: 'Collected a practical base of components and ideas for future personal products.',
-      mood: 'quiet utility'
+        'Demonstrated strong zero-shot transfer performance across heterogeneous PDE datasets with efficient activated parameters.',
+      mood: 'research spotlight',
+      imageUrl: 'https://raw.githubusercontent.com/haiyangxin/MoEPOT/main/resources/MoE-POT.png',
+      imageAlt: 'MoEPOT project preview',
+      codeUrl: 'https://github.com/haiyangxin/MoEPOT'
     }
   ],
   publications: [

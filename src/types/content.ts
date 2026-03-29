@@ -36,6 +36,8 @@ export interface ProjectItem {
   techStack: string[]
   result: string
   mood?: string
+  imageUrl?: string
+  imageAlt?: string
   codeUrl?: string
   demoUrl?: string
 }
