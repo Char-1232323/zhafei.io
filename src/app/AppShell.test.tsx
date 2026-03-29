@@ -10,9 +10,9 @@ describe('AppShell bright redesign', () => {
     expect(sections.map((section) => section.id)).toEqual([
       'hero',
       'about',
-      'projects',
-      'publications',
       'experience',
+      'publications',
+      'projects',
       'contact'
     ])
   })

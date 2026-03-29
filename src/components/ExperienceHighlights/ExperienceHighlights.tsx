@@ -26,16 +26,6 @@ function ExperienceHighlights({ experiences }: ExperienceHighlightsProps) {
               <span className={styles.period}>{exp.period}</span>
             </div>
 
-            <p className={styles.summary}>{exp.summary}</p>
-
-            <ul className={styles.outcomes}>
-              {exp.outcomes.map((outcome, idx) => (
-                <li key={idx} className={styles.outcome}>
-                  {outcome}
-                </li>
-              ))}
-            </ul>
-
             <div className={styles.technologies}>
               {exp.technologies.map((tech) => (
                 <span key={tech} className={styles.techPill}>

@@ -2,7 +2,7 @@ import type { SiteContent } from '../types/content'
 
 export const siteContent: SiteContent = {
   profile: {
-    name: 'Fey',
+    name: 'Fei Zha',
     role: 'Student',
     targetRole: 'Open to creative frontier AI development',
     intro:
@@ -122,7 +122,7 @@ export const siteContent: SiteContent = {
     },
     {
       title: 'Easy3E: Feed-Forward 3D Asset Editing via Rectified Voxel Flow',
-      venue: 'arXiv / CVPR 2026 (Easy3E)',
+      venue: 'CVPR 2026 (Easy3E)',
       year: '2026',
       link: 'https://arxiv.org/abs/2602.21499',
       authors: ['Shimin Hu', 'Yuanyi Wei', 'Fei Zha', 'Yudong Guo', 'Juyong Zhang'],

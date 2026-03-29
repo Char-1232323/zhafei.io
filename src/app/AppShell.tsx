@@ -17,9 +17,9 @@ function AppShell() {
         <Header brandLabel={siteContent.profile.name} navLinks={navigationLinks} />
         <HeroPoster content={siteContent.profile} heroImage={visualAssets.heroImage} />
         <MoodSection content={siteContent.mood} />
-        <FeaturedProjects projects={siteContent.projects} />
-        <PublicationsSection publications={siteContent.publications} />
         <ExperienceHighlights experiences={siteContent.experience} />
+        <PublicationsSection publications={siteContent.publications} />
+        <FeaturedProjects projects={siteContent.projects} />
         <ContactInvitation contactLinks={siteContent.contact} />
       </main>
     </div>
