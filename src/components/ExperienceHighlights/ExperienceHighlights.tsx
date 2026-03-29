@@ -3,16 +3,16 @@ import styles from './ExperienceHighlights.module.css'
 
 interface ExperienceHighlightsProps {
   experiences: ExperienceItem[]
+  title: string
+  subtitle: string
 }
 
-function ExperienceHighlights({ experiences }: ExperienceHighlightsProps) {
+function ExperienceHighlights({ experiences, title, subtitle }: ExperienceHighlightsProps) {
   return (
     <section id="experience" className={styles.section} aria-labelledby="experience-title">
       <div className={styles.header}>
-        <h2 id="experience-title" className={styles.title}>Experience</h2>
-        <p className={styles.subtitle}>
-          Where I've had the chance to build, learn, and grow alongside talented people.
-        </p>
+        <h2 id="experience-title" className={styles.title}>{title}</h2>
+        <p className={styles.subtitle}>{subtitle}</p>
       </div>
 
       <div className={styles.timeline}>

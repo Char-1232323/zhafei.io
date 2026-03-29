@@ -8,8 +8,19 @@ const moepotImageUrl =
 const moepotRepoUrl = 'https://github.com/haiyangxin/MoEPOT'
 
 describe('FeaturedProjects', () => {
+  const renderFeaturedProjects = (projects = siteContent.projects) =>
+    render(
+      <FeaturedProjects
+        projects={projects}
+        title={siteContent.projectsSection.title}
+        subtitle={siteContent.projectsSection.subtitle}
+        scrollerLabel={siteContent.projectsSection.scrollerLabel}
+        scrollerRoleDescription={siteContent.projectsSection.scrollerRoleDescription}
+      />
+    )
+
   it('renders only one project title and links that title', () => {
-    render(<FeaturedProjects projects={siteContent.projects} />)
+    renderFeaturedProjects()
 
     const title = screen.getByRole('heading', { level: 3, name: 'MoEPOT' })
     const titleLink = screen.getByRole('link', { name: 'MoEPOT' })
@@ -33,7 +44,7 @@ describe('FeaturedProjects', () => {
     ]
 
     try {
-      render(<FeaturedProjects projects={duplicatedNameProjects} />)
+      renderFeaturedProjects(duplicatedNameProjects)
 
       expect(consoleErrorSpy).not.toHaveBeenCalledWith(
         expect.stringContaining('Encountered two children with the same key')
@@ -44,7 +55,7 @@ describe('FeaturedProjects', () => {
   })
 
   it('renders project image and repository link', () => {
-    render(<FeaturedProjects projects={siteContent.projects} />)
+    renderFeaturedProjects()
 
     const image = screen.getByRole('img', { name: 'MoEPOT project preview' })
     const link = screen.getByRole('link', { name: 'MoEPOT' })
@@ -54,7 +65,7 @@ describe('FeaturedProjects', () => {
   })
 
   it('renders all tech stack items', () => {
-    render(<FeaturedProjects projects={siteContent.projects} />)
+    renderFeaturedProjects()
 
     siteContent.projects[0].techStack.forEach((tech) => {
       expect(screen.getByText(tech)).toBeInTheDocument()
@@ -62,7 +73,7 @@ describe('FeaturedProjects', () => {
   })
 
   it('renders keyboard-focusable horizontal scroller region', () => {
-    render(<FeaturedProjects projects={siteContent.projects} />)
+    renderFeaturedProjects()
 
     const cardsRegion = screen.getByRole('group', {
       name: 'Featured projects horizontal scroller',
@@ -73,7 +84,7 @@ describe('FeaturedProjects', () => {
   })
 
   it('renders project body text for purpose, contribution, and result', () => {
-    render(<FeaturedProjects projects={siteContent.projects} />)
+    renderFeaturedProjects()
 
     const project = siteContent.projects[0]
 

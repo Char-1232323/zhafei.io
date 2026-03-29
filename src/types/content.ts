@@ -84,18 +84,47 @@ export interface ProfileContent {
 }
 
 export interface MoodContent {
+  sectionLabel: string
   intro: string
   cards: MoodCard[]
   tags: string[]
 }
 
+export interface ExperienceSectionContent {
+  title: string
+  subtitle: string
+}
+
+export interface PublicationsSectionContent {
+  title: string
+  subtitle: string
+}
+
+export interface ProjectsSectionContent {
+  title: string
+  subtitle: string
+  scrollerLabel: string
+  scrollerRoleDescription: string
+}
+
+export interface ContactSectionContent {
+  title: string
+  message: string
+  copiedStatus: string
+  copyFailedStatus: string
+}
+
 export interface SiteContent {
   profile: ProfileContent
   mood: MoodContent
+  experienceSection: ExperienceSectionContent
   experience: ExperienceItem[]
+  publicationsSection: PublicationsSectionContent
   projects: ProjectItem[]
+  projectsSection: ProjectsSectionContent
   publications: PublicationItem[]
   skills?: SkillGroup[]
   education?: EducationItem[]
+  contactSection: ContactSectionContent
   contact: ContactLink[]
 }

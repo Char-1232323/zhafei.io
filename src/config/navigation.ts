@@ -1,12 +1,2 @@
-export interface NavigationLink {
-  label: string
-  href: string
-}
-
-export const navigationLinks: NavigationLink[] = [
-  { label: 'About Me', href: '#about' },
-  { label: 'Experience', href: '#experience' },
-  { label: 'Publications', href: '#publications' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Contact', href: '#contact' }
-]
+export type { NavigationLink } from './navigation.i18n'
+export { navigationEn as navigationLinks } from './navigation.i18n'

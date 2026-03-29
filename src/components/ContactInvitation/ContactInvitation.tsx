@@ -4,6 +4,10 @@ import styles from './ContactInvitation.module.css'
 
 interface ContactInvitationProps {
   contactLinks: ContactLink[]
+  title: string
+  message: string
+  copiedStatus: string
+  copyFailedStatus: string
 }
 
 const MAILTO_PREFIX = 'mailto:'
@@ -43,7 +47,13 @@ async function copyTextToClipboard(value: string): Promise<boolean> {
   return copied
 }
 
-function ContactInvitation({ contactLinks }: ContactInvitationProps) {
+function ContactInvitation({
+  contactLinks,
+  title,
+  message,
+  copiedStatus,
+  copyFailedStatus
+}: ContactInvitationProps) {
   const [statusMessage, setStatusMessage] = useState('')
   const fallbackTimerRef = useRef<number | null>(null)
   const clearMessageTimerRef = useRef<number | null>(null)
@@ -80,8 +90,8 @@ function ContactInvitation({ contactLinks }: ContactInvitationProps) {
 
       setStatusMessage(
         copied
-          ? 'No mail app detected, email copied'
-          : 'Unable to copy email, please copy manually'
+          ? copiedStatus
+          : copyFailedStatus
       )
 
       if (clearMessageTimerRef.current !== null) {
@@ -97,10 +107,8 @@ function ContactInvitation({ contactLinks }: ContactInvitationProps) {
   return (
     <section id="contact" className={styles.section} aria-labelledby="contact-title">
       <div className={styles.container}>
-        <h2 id="contact-title" className={styles.title}>Let's Connect</h2>
-        <p className={styles.message}>
-          I'd love to hear from you — whether it's a question, a collaboration, or just to say hello.
-        </p>
+        <h2 id="contact-title" className={styles.title}>{title}</h2>
+        <p className={styles.message}>{message}</p>
         
         <div className={styles.links}>
           {contactLinks.map((link) => (

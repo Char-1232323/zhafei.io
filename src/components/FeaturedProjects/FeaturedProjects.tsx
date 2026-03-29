@@ -3,23 +3,31 @@ import styles from './FeaturedProjects.module.css'
 
 interface FeaturedProjectsProps {
   projects: ProjectItem[]
+  title: string
+  subtitle: string
+  scrollerLabel: string
+  scrollerRoleDescription: string
 }
 
-function FeaturedProjects({ projects }: FeaturedProjectsProps) {
+function FeaturedProjects({
+  projects,
+  title,
+  subtitle,
+  scrollerLabel,
+  scrollerRoleDescription
+}: FeaturedProjectsProps) {
   return (
     <section id="projects" className={styles.section} aria-labelledby="projects-title">
       <div className={styles.header}>
-        <h2 id="projects-title" className={styles.title}>Featured Projects</h2>
-        <p className={styles.subtitle}>
-          A collection of projects where I got to shape both the feeling and the function.
-        </p>
+        <h2 id="projects-title" className={styles.title}>{title}</h2>
+        <p className={styles.subtitle}>{subtitle}</p>
       </div>
 
       <div
         className={styles.cards}
         role="group"
-        aria-label="Featured projects horizontal scroller"
-        aria-roledescription="horizontal scroller"
+        aria-label={scrollerLabel}
+        aria-roledescription={scrollerRoleDescription}
         tabIndex={0}
       >
         {projects.map((project, index) => {

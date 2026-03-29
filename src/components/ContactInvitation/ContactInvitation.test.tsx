@@ -10,6 +10,17 @@ const originalExecCommandDescriptor = Object.getOwnPropertyDescriptor(document, 
 const originalVisibilityStateDescriptor = Object.getOwnPropertyDescriptor(document, 'visibilityState')
 
 describe('ContactInvitation', () => {
+  const renderContactInvitation = (contactLinks = siteContent.contact) =>
+    render(
+      <ContactInvitation
+        contactLinks={contactLinks}
+        title={siteContent.contactSection.title}
+        message={siteContent.contactSection.message}
+        copiedStatus={siteContent.contactSection.copiedStatus}
+        copyFailedStatus={siteContent.contactSection.copyFailedStatus}
+      />
+    )
+
   afterEach(() => {
     vi.restoreAllMocks()
     vi.useRealTimers()
@@ -37,14 +48,14 @@ describe('ContactInvitation', () => {
   })
 
   it('renders title and message', () => {
-    render(<ContactInvitation contactLinks={siteContent.contact} />)
+    renderContactInvitation()
 
-    expect(screen.getByText("Let's Connect")).toBeInTheDocument()
-    expect(screen.getByText(/I'd love to hear from you/)).toBeInTheDocument()
+    expect(screen.getByText(siteContent.contactSection.title)).toBeInTheDocument()
+    expect(screen.getByText(siteContent.contactSection.message)).toBeInTheDocument()
   })
 
   it('renders all contact links', () => {
-    render(<ContactInvitation contactLinks={siteContent.contact} />)
+    renderContactInvitation()
 
     siteContent.contact.forEach((link) => {
       const linkElement = screen.getByText(link.label)
@@ -54,15 +65,15 @@ describe('ContactInvitation', () => {
   })
 
   it('applies external link attributes correctly', () => {
-    render(<ContactInvitation contactLinks={siteContent.contact} />)
+    renderContactInvitation()
 
     const githubLink = screen.getByText('GitHub')
     expect(githubLink).toHaveAttribute('target', '_blank')
     expect(githubLink).toHaveAttribute('rel', 'noopener noreferrer')
 
-    const pagesLink = screen.getByText('Pages')
-    expect(pagesLink).toHaveAttribute('target', '_blank')
-    expect(pagesLink).toHaveAttribute('rel', 'noopener noreferrer')
+    const cvLink = screen.getByText('CV')
+    expect(cvLink).toHaveAttribute('target', '_blank')
+    expect(cvLink).toHaveAttribute('rel', 'noopener noreferrer')
 
     const emailLink = screen.getByText('Email')
     expect(emailLink).not.toHaveAttribute('target')
@@ -79,7 +90,7 @@ describe('ContactInvitation', () => {
       value: { writeText }
     })
 
-    render(<ContactInvitation contactLinks={siteContent.contact} />)
+    renderContactInvitation()
 
     const emailLink = screen.getByText('Email')
     emailLink.addEventListener('click', (event) => event.preventDefault())
@@ -91,7 +102,7 @@ describe('ContactInvitation', () => {
 
     expect(writeText).toHaveBeenCalledWith(expectedEmail)
 
-    expect(screen.getByText('No mail app detected, email copied')).toBeInTheDocument()
+    expect(screen.getByText(siteContent.contactSection.copiedStatus)).toBeInTheDocument()
   })
 
   it('shows manual-copy message when fallback copy fails', async () => {
@@ -110,7 +121,7 @@ describe('ContactInvitation', () => {
       value: execCommandMock
     })
 
-    render(<ContactInvitation contactLinks={siteContent.contact} />)
+    renderContactInvitation()
 
     const emailLink = screen.getByText('Email')
     emailLink.addEventListener('click', (event) => event.preventDefault())
@@ -123,7 +134,7 @@ describe('ContactInvitation', () => {
     expect(writeText).toHaveBeenCalledWith(expectedEmail)
 
     expect(execCommandMock).toHaveBeenCalledWith('copy')
-    expect(screen.getByText('Unable to copy email, please copy manually')).toBeInTheDocument()
+    expect(screen.getByText(siteContent.contactSection.copyFailedStatus)).toBeInTheDocument()
   })
 
   it('does not auto-copy when tab is visible but unfocused', async () => {
@@ -141,7 +152,7 @@ describe('ContactInvitation', () => {
     })
     vi.spyOn(document, 'hasFocus').mockReturnValue(false)
 
-    render(<ContactInvitation contactLinks={siteContent.contact} />)
+    renderContactInvitation()
 
     const emailLink = screen.getByText('Email')
     emailLink.addEventListener('click', (event) => event.preventDefault())
@@ -152,7 +163,7 @@ describe('ContactInvitation', () => {
     })
 
     expect(writeText).not.toHaveBeenCalled()
-    expect(screen.queryByText('No mail app detected, email copied')).not.toBeInTheDocument()
+    expect(screen.queryByText(siteContent.contactSection.copiedStatus)).not.toBeInTheDocument()
   })
 
   it('copies only pure email when mailto includes query and hash', async () => {
@@ -170,6 +181,10 @@ describe('ContactInvitation', () => {
         contactLinks={[
           { label: 'Email', href: 'mailto:person@example.com?subject=Hello#compose' }
         ]}
+        title={siteContent.contactSection.title}
+        message={siteContent.contactSection.message}
+        copiedStatus={siteContent.contactSection.copiedStatus}
+        copyFailedStatus={siteContent.contactSection.copyFailedStatus}
       />
     )
 
@@ -194,7 +209,7 @@ describe('ContactInvitation', () => {
       value: { writeText }
     })
 
-    render(<ContactInvitation contactLinks={siteContent.contact} />)
+    renderContactInvitation()
 
     const emailLink = screen.getByText('Email')
     emailLink.addEventListener('click', (event) => event.preventDefault())
@@ -205,13 +220,13 @@ describe('ContactInvitation', () => {
       await Promise.resolve()
     })
 
-    expect(screen.getByText('No mail app detected, email copied')).toBeInTheDocument()
+    expect(screen.getByText(siteContent.contactSection.copiedStatus)).toBeInTheDocument()
 
     await act(async () => {
       vi.advanceTimersByTime(1800)
       await Promise.resolve()
     })
 
-    expect(screen.queryByText('No mail app detected, email copied')).not.toBeInTheDocument()
+    expect(screen.queryByText(siteContent.contactSection.copiedStatus)).not.toBeInTheDocument()
   })
 })

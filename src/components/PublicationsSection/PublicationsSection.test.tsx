@@ -4,7 +4,13 @@ import PublicationsSection from './PublicationsSection'
 
 describe('PublicationsSection', () => {
   it('renders publication titles, authors, and abstracts', () => {
-    render(<PublicationsSection publications={siteContent.publications} />)
+    render(
+      <PublicationsSection
+        publications={siteContent.publications}
+        title={siteContent.publicationsSection.title}
+        subtitle={siteContent.publicationsSection.subtitle}
+      />
+    )
 
     expect(screen.getByText('Mixture-of-Experts Operator Transformer for Large-Scale PDE Pre-Training')).toBeInTheDocument()
     expect(screen.getByText('Easy3E: Feed-Forward 3D Asset Editing via Rectified Voxel Flow')).toBeInTheDocument()

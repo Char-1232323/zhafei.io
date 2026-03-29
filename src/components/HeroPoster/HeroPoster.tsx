@@ -22,7 +22,7 @@ function HeroPoster({ content, heroImage }: HeroPosterProps) {
         <p className={styles.tagline}>{content.emotionalTagline}</p>
         <p className={styles.targetRole}>{content.targetRole}</p>
         <p className={styles.intro}>{content.intro}</p>
-        <dl className={styles.stats} aria-label="Hero details">
+        <dl className={styles.stats} aria-label={content.name}>
           {content.stats.map((stat) => (
             <div key={stat.label} className={styles.statCard}>
               <dt className={styles.statLabel}>{stat.label}</dt>

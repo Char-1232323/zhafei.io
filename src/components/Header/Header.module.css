@@ -13,6 +13,7 @@
   border-radius: 999px;
   backdrop-filter: blur(18px);
   box-shadow: 0 8px 32px rgba(209, 174, 187, 0.15);
+  flex-wrap: wrap;
 }
 
 .brand,
@@ -30,6 +31,8 @@
   display: flex;
   gap: 16px;
   flex-wrap: wrap;
+  flex: 1;
+  justify-content: center;
 }
 
 .link {
@@ -39,4 +42,35 @@
 .link:hover,
 .link:focus-visible {
   color: var(--accent-strong);
+}
+
+.languageToggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.75);
+}
+
+.languageButton {
+  border: 0;
+  border-radius: 999px;
+  padding: 4px 10px;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.languageButton[aria-pressed='true'] {
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+}
+
+.languageButton:focus-visible {
+  outline: 2px solid var(--accent-strong);
+  outline-offset: 1px;
 }

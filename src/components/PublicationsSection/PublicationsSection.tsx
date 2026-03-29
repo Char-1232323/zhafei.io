@@ -3,16 +3,16 @@ import styles from './PublicationsSection.module.css'
 
 interface PublicationsSectionProps {
   publications: PublicationItem[]
+  title: string
+  subtitle: string
 }
 
-function PublicationsSection({ publications }: PublicationsSectionProps) {
+function PublicationsSection({ publications, title, subtitle }: PublicationsSectionProps) {
   return (
     <section id="publications" className={styles.section} aria-labelledby="publications-title">
       <div className={styles.header}>
-        <h2 id="publications-title" className={styles.title}>Publications</h2>
-        <p className={styles.subtitle}>
-          Selected research papers with author list and abstracts.
-        </p>
+        <h2 id="publications-title" className={styles.title}>{title}</h2>
+        <p className={styles.subtitle}>{subtitle}</p>
       </div>
 
       <div className={styles.list}>
