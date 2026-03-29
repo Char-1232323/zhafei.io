@@ -25,7 +25,14 @@ function PublicationsSection({ publications }: PublicationsSectionProps) {
               </a>
             </div>
             <p className={styles.meta}>{paper.year}</p>
-            <p className={styles.authors}>{paper.authors.join(', ')}</p>
+            <p className={styles.authors}>
+              {paper.authors.map((author, index) => (
+                <span key={`${paper.title}-${author}`}>
+                  {author === 'Fei Zha' ? <strong>{author}</strong> : author}
+                  {index < paper.authors.length - 1 ? ', ' : ''}
+                </span>
+              ))}
+            </p>
             <p className={styles.abstract}>{paper.abstract}</p>
           </article>
         ))}
