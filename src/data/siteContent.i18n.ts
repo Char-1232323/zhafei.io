@@ -135,7 +135,7 @@ export const siteContentEn: SiteContent = {
 
 export const siteContentZh: SiteContent = {
   profile: {
-    name: 'Fei Zha',
+    name: '查飞',
     role: '学生',
     targetRole: '对前沿且富有创造力的 AI 开发机会保持开放',
     intro: '我是中国科学技术大学的一名硕士生，热爱数学、人工智能技术和 ACG 文化。',
