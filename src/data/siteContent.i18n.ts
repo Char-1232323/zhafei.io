@@ -28,19 +28,19 @@ export const siteContentEn: SiteContent = {
       'I am a first-year M.S. student at the University of Science and Technology of China, advised by Prof. Juyong Zhang. My current research focuses on 3D vision and diffusion generation. I received my B.S. in Computational Mathematics from the Graphics & Geometric Computing Lab at the University of Science and Technology of China (USTC).',
     cards: [
       {
-        title: 'What I enjoy building',
+        title: 'Freshman Scholarship (Silver Prize)',
         description:
-          'Personal websites, polished interfaces, and small tools that turn ideas into something visible and shareable.'
+          'Awarded for strong first-year academic performance and overall development.'
       },
       {
-        title: 'What I notice first',
+        title: 'University Outstanding Scholarship (Silver Prize)',
         description:
-          'Typography, color temperature, spacing rhythm, and whether an interface feels welcoming instead of merely functional.'
+          'Recognized by USTC for academic excellence and consistent achievement.'
       },
       {
-        title: 'What I want more of',
+        title: 'National-Level Academic Honors',
         description:
-          'Projects where design taste, frontend craft, and a little emotional texture can live in the same place.'
+          'National Encouragement Scholarship; Second Prize in the National College Students Mathematics Competition (Anhui Division).'
       }
     ],
     tags: ['soft ui', 'dreamy layout', 'frontend craft', 'visual mood', 'gentle motion']
@@ -168,16 +168,16 @@ export const siteContentZh: SiteContent = {
       '我目前是中国科学技术大学一年级硕士生，导师是张举勇教授。当前研究方向聚焦于三维视觉与扩散生成。我在中国科学技术大学图形与几何计算实验室完成了计算数学学士学位。',
     cards: [
       {
-        title: '我喜欢做什么',
-        description: '个人网站、精致界面，以及能把想法变成可见成果的小工具。'
+        title: '新生奖学金银奖',
+        description: '因入学阶段综合表现与学习成绩获得表彰。'
       },
       {
-        title: '我最先注意什么',
-        description: '字体、色温、留白节奏，以及一个界面是否不仅能用而且让人愿意停留。'
+        title: '校优秀奖学金银奖',
+        description: '因在校期间学习表现优异、综合素质突出获得表彰。'
       },
       {
-        title: '我想持续深入的方向',
-        description: '让设计审美、前端手艺与细腻情绪质感共存的项目。'
+        title: '国家级竞赛与奖学金荣誉',
+        description: '国家励志奖学金；全国大学生数学竞赛安徽赛区二等奖。'
       }
     ],
     tags: ['柔和界面', '梦感布局', '前端打磨', '视觉氛围', '轻微动效']
