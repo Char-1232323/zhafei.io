@@ -35,7 +35,7 @@
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr;
   gap: 16px;
 }
 
@@ -77,10 +77,4 @@
   color: var(--muted);
   font-size: 0.82rem;
   letter-spacing: 0.02em;
-}
-
-@media (max-width: 900px) {
-  .cards {
-    grid-template-columns: 1fr;
-  }
 }
